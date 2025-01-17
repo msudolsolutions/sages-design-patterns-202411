@@ -1,0 +1,14 @@
+namespace Exercise
+{
+    // Factory
+    public class BuildingAsGraphFactory
+    {
+        // Product
+        public IBuildingGraph Create(string kind) => kind switch
+        {
+            "Mermaid" => new MermaidGraph(),
+            "Dgraph" => new DgraphGraph(),
+            _ => throw new NotSupportedException($"{kind} not supported."),
+        };
+    }
+}

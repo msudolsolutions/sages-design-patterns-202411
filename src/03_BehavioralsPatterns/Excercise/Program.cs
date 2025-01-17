@@ -32,12 +32,13 @@ namespace Exercise
             building.AddFloor(floor1);
             building.AddFloor(floor2);
 
-            var mermaidGraph = new MermaidGraph();
+            var buidlingAsGraphFactory = new BuildingAsGraphFactory();
+            var mermaidGraph = buidlingAsGraphFactory.Create("Mermaid");
             var mermaidResult = mermaidGraph.GenerateBuildingGraph(building);
             Console.WriteLine("Mermaid graph:");
             Console.WriteLine(mermaidResult + "\n");
 
-            var dgraphGraph = new DgraphGraph();
+            var dgraphGraph = buidlingAsGraphFactory.Create("Dgraph");
             var dgraphResult = dgraphGraph.GenerateBuildingGraph(building);
             Console.WriteLine("Dgraph graph:");
             Console.WriteLine(dgraphResult);
